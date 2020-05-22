@@ -6,12 +6,11 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject Monster;
-     int monsterCount = 0;
+     public static int monsterCount = 0;
     float spawnTime;
     float respawnDelay = 2f;
     public void Update()
     {
-        Debug.Log(monsterCount);
         if (monsterCount < 5)
             spawn();      
     }
