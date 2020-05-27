@@ -9,14 +9,16 @@ public class Spawn : MonoBehaviour
      public static int monsterCount = 0;
     float spawnTime;
     float respawnDelay = 2f;
+
     public void Update()
     {
-        if (monsterCount < 5)
+        if (monsterCount < 3)
             spawn();      
     }
 
     public void spawn()
     {
+        //a small spawn delay for monsters
         if (spawnTime + respawnDelay > Time.unscaledTime)
             return;
         spawnTime = Time.unscaledTime;

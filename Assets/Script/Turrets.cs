@@ -6,6 +6,7 @@ public class Turrets : MonoBehaviour
 {
     public GameObject towerPrefab;
 
+    //Instantiate a tower prefab on mouse click
     private void OnMouseUp()
     {
         GameObject g = Instantiate(towerPrefab);

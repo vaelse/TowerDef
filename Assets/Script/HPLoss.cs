@@ -16,10 +16,11 @@ public class HPLoss : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     public void TowerDamaged()
     {
+        //remove one character form TextMesh
         CastleTextMesh = healthBar.GetComponent<TextMesh>();
         CastleTextMesh.text = CastleTextMesh.text.Remove(CastleTextMesh.text.Length - 1);
     }
-
 }
