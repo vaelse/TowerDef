@@ -13,10 +13,10 @@ public class Spawn : MonoBehaviour
     public void Update()
     {
         if (monsterCount < 3)
-            spawn();      
+            MonsterSpawn();      
     }
 
-    public void spawn()
+    public void MonsterSpawn()
     {
         //a small spawn delay for monsters
         if (spawnTime + respawnDelay > Time.unscaledTime)

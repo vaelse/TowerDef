@@ -5,11 +5,15 @@ using UnityEngine;
 public class Turrets : MonoBehaviour
 {
     public GameObject towerPrefab;
-
-    //Instantiate a tower prefab on mouse click
-    private void OnMouseUp()
+    bool Istowerbuild = false;
+    
+    private void OnMouseDown()
     {
-        GameObject g = Instantiate(towerPrefab);
-        g.transform.position = transform.position + new Vector3(0, 0.75f, 0);
+        if (Istowerbuild == false)
+        {
+            Istowerbuild = true;
+            GameObject g = Instantiate(towerPrefab);
+            g.transform.position = transform.position + new Vector3(0, 0.75f, 0);
+        }
     }
 }
