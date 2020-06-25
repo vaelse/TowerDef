@@ -12,11 +12,4 @@ public class TurretShooting : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         GetComponent<Rigidbody>().velocity = dir.normalized * speed;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Monster")
-        {
-            Destroy(gameObject);
-        }
-    }
 }
