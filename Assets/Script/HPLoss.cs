@@ -7,6 +7,16 @@ public class HPLoss : MonoBehaviour
     public GameObject healthBar;
     TextMesh CastleTextMesh;
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Monster")
+    //    {
+    //        Spawn.monsterCount--;
+    //        TowerDamaged();
+    //        Destroy(other.gameObject);
+    //    }
+    //}
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Monster")
@@ -16,7 +26,6 @@ public class HPLoss : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
     public void TowerDamaged()
     {
         //remove one character form TextMesh

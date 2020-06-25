@@ -8,7 +8,7 @@ public class LookAt : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject shootPoint;
     float fireCountdown = 0f;
-    float fireRate = 1f;
+    float fireRate = 2f;
 
     public List<Collider> ListOfMonsters = new List<Collider>();
 
@@ -36,7 +36,6 @@ public class LookAt : MonoBehaviour
     {
         if (other.gameObject.tag == "Monster")
         {
-            
             monsterTrigger = true;
             ListOfMonsters.Add(other);
         }

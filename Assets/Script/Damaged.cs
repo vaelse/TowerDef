@@ -1,18 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Damaged : MonoBehaviour
 {
     public GameObject monsterHealthBar;
     TextMesh monsterTextMesh;
-
+    public Animator anim;
+    
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+       
+    }
     private void Update()
     {
-        if(monsterTextMesh.text.Length <= 0)
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        if (monsterTextMesh.text.Length <= 0)
         {
-            Destroy(gameObject);
+            agent.Stop();
+            anim.Play("Die");
+            Destroy(gameObject, .8f);
             Spawn.monsterCount--;
+
         }
     }
 

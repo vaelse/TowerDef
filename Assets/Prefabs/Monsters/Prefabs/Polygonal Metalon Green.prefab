@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 7467884899809852023}
   - component: {fileID: 4940054253905364562}
   - component: {fileID: 8043821540882492604}
+  - component: {fileID: 3925288371679781087}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
   m_TagString: Monster
@@ -1259,6 +1260,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41a23ccb630434690473d53d80c380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3925288371679781087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783563462218004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf986e55a10171e43ad7bb83c846de1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterHealthBar: {fileID: 3436697945524416128}
 --- !u!1 &1804318802084684
 GameObject:
   m_ObjectHideFlags: 0
