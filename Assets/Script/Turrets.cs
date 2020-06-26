@@ -5,8 +5,7 @@ using UnityEngine;
 public class Turrets : MonoBehaviour
 {
     public GameObject towerPrefab;
-    bool Istowerbuild = false;
-
+    public static bool Istowerbuild = false;
     
     private void OnMouseDown()
     {
