@@ -8,5 +8,4 @@ public class HPBar : MonoBehaviour
     {
         transform.forward = Camera.main.transform.forward;
     }
-
 }

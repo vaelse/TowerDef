@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     public GameObject Monster;
      public static int monsterCount = 0;
     float spawnTime;
-    float respawnDelay = 2.5f;
+    float respawnDelay = 2f;
 
     public void Update()
     {

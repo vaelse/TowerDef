@@ -9,7 +9,14 @@ public class TurretShooting : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 dir = target.position - transform.position;
-        GetComponent<Rigidbody>().velocity = dir.normalized * speed;
+        if (target != null)
+        {
+            Vector3 dir = target.position - transform.position;
+            GetComponent<Rigidbody>().velocity = dir.normalized * speed;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

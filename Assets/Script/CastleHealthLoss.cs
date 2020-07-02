@@ -2,31 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPLoss : MonoBehaviour
+public class CastleHealthLoss : MonoBehaviour
 {
     public GameObject healthBar;
     TextMesh CastleTextMesh;
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Monster")
-    //    {
-    //        Spawn.monsterCount--;
-    //        TowerDamaged();
-    //        Destroy(other.gameObject);
-    //    }
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Monster")
         {
             Spawn.monsterCount--;
-            TowerDamaged();
+            CastleDamaged();
             Destroy(collision.gameObject);
         }
     }
-    public void TowerDamaged()
+
+    public void CastleDamaged()
     {
         //remove one character form TextMesh
         CastleTextMesh = healthBar.GetComponent<TextMesh>();

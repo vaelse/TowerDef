@@ -8,18 +8,19 @@ public class LookAt : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject shootPoint;
     float fireCountdown = 0f;
-    float fireRate = 2f;
-
+    float fireRate = 1f;
     public List<Collider> ListOfMonsters = new List<Collider>();
 
     private void Update()
     {
         fireCountdown -= Time.deltaTime;
+        var Monster = GameObject.FindGameObjectWithTag("Monster");
+        Damaged MonsterHealth = Monster.GetComponent<Damaged>();
 
         if (ListOfMonsters.Count > 0)
         {
             //if object at the top of the list is destroyed remove it from the list
-            if (ListOfMonsters[0] == null)
+            if (MonsterHealth.monsterTextMesh.text.Length == 0)
             {
                 ListOfMonsters.Remove(ListOfMonsters[0]);
             }
@@ -58,5 +59,6 @@ public class LookAt : MonoBehaviour
             fireCountdown = fireRate;
         }
     }
+    
 }
 

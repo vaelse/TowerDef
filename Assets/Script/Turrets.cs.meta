@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - towerPrefab: {fileID: 879856907837702406, guid: 42be24658ca6bb240935bc2dbff12cda,
+  - towerPrefab: {instanceID: 0}
+  - destorybutton: {fileID: 5312112715102835831, guid: 2ddfb71fb0fc7ed429bcb3c196f0754b,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
