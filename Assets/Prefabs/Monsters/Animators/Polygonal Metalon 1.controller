@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Polygonal Metalon
+  m_Name: Polygonal Metalon 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Walk Forward
@@ -206,7 +206,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &1102242342088896042
+--- !u!1102 &1102157561158657818
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -227,32 +227,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: b102accb4eb134940ba2ad7b36761f9e, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1102472332992161624
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Run Forward In Place
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5c58933387b06c046a5f6eb866055790, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -298,22 +272,19 @@ AnimatorStateMachine:
     m_State: {fileID: 1102843847374348448}
     m_Position: {x: -252, y: 192, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102472332992161624}
-    m_Position: {x: 193.52222, y: -13.097717, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102242342088896042}
-    m_Position: {x: -153.18048, y: -282.75534, z: 0}
+    m_State: {fileID: 1102157561158657818}
+    m_Position: {x: 204, y: 228, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101649536732315692}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -96, y: -120, z: 0}
-  m_EntryPosition: {x: -300, y: -156, z: 0}
+  m_AnyStatePosition: {x: -228, y: 300, z: 0}
+  m_EntryPosition: {x: -12, y: 228, z: 0}
   m_ExitPosition: {x: -228, y: 108, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102472332992161624}
+  m_DefaultState: {fileID: 1102157561158657818}
 --- !u!1107 &1107805436530219822
 AnimatorStateMachine:
   serializedVersion: 5

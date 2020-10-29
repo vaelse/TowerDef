@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretShooting : MonoBehaviour
 {
     public Transform target;
-    float speed = 20f;
+    float speed = 15f;
 
     private void FixedUpdate()
     {

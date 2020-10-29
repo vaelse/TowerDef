@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1806548414986105265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
   m_Center: {x: 0, y: 4.5820494, z: 0.20335214}
 --- !u!114 &7756197115869797366
 MonoBehaviour:
@@ -354,6 +354,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8455626123188692237}
+  - component: {fileID: 6231001247681137246}
+  - component: {fileID: 5752273682683624170}
   m_Layer: 9
   m_Name: Turret Tower 01
   m_TagString: Turret
@@ -379,6 +381,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &6231001247681137246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245079967304679423}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4903948, y: 3.0864086, z: 3.2422838}
+  m_Center: {x: 0.018427052, y: 1.0432043, z: 0.081587054}
+--- !u!114 &5752273682683624170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245079967304679423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45394d42046e893408a3e976d50371e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyButton: {fileID: 570560043524520986}
 --- !u!1 &4299381849357039863
 GameObject:
   m_ObjectHideFlags: 0

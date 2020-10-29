@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class LookAt : MonoBehaviour
 {
@@ -14,21 +16,18 @@ public class LookAt : MonoBehaviour
     private void Update()
     {
         fireCountdown -= Time.deltaTime;
-        var Monster = GameObject.FindGameObjectWithTag("Monster");
-        Damaged MonsterHealth = Monster.GetComponent<Damaged>();
-
         if (ListOfMonsters.Count > 0)
         {
             //if object at the top of the list is destroyed remove it from the list
-            if (MonsterHealth.monsterTextMesh.text.Length == 0)
+            if ( ListOfMonsters[0] == null)
             {
-                ListOfMonsters.Remove(ListOfMonsters[0]);
+                remove();
             }
             else if (monsterTrigger == true)
             {
                 //Turret focuses on the object that is on the top of the list
                 transform.LookAt(ListOfMonsters[0].transform);
-                Shooting();
+                Shoot();
             }
         }
     }
@@ -50,15 +49,19 @@ public class LookAt : MonoBehaviour
         }
     }
 
-    private void Shooting()
+    public void remove()
+    {
+        ListOfMonsters.Remove(ListOfMonsters[0]);
+    }
+
+    private void Shoot()
     {
         if (fireCountdown <= 0)
         {
-            GameObject Bull = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
-            Bull.GetComponent<TurretShooting>().target = ListOfMonsters[0].transform;
+            GameObject Bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
+            Bullet.GetComponent<TurretShooting>().target = ListOfMonsters[0].transform;
             fireCountdown = fireRate;
         }
     }
-    
 }
 

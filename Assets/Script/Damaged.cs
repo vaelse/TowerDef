@@ -2,51 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Damaged : MonoBehaviour
 {
-    public GameObject monsterHealthBar;
-    public TextMesh monsterTextMesh;
-    public Animator anim;
+    [Header("Monster Health")]
+    public int maxHealth;
+    public int currentHealth;
+    public HPBar healthBar;
+    [Header("Kill Gold")]
+    public int goldOnDeath;
+    Animator anim;
+    GoldManager goldManager;
+    NavMeshAgent agent;
 
     private void Start()
     {
-        monsterTextMesh = monsterHealthBar.GetComponent<TextMesh>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
+        goldManager = GameObject.Find("Tower Cubes").GetComponent<GoldManager>();
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        MonsterDeath();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(other.gameObject);
-            MonsterDamaged();
+            Destroy(collision.gameObject);
+            MonsterDamaged(25);
         }
     }
 
-    public void MonsterDamaged()
+    public void MonsterDamaged(int damage)
     {
-        if(monsterTextMesh.text.Length > 0)
-            monsterTextMesh.text = monsterTextMesh.text.Remove(monsterTextMesh.text.Length - 1);
+        if (currentHealth <= 25)
+        {
+            MonsterDeath();
+        }
+        if (currentHealth >= 25)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 
     public void MonsterDeath()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        if (monsterTextMesh.text.Length <= 0)
+        Destroy(gameObject.GetComponent<BoxCollider>());
+        Destroy(gameObject, .85f);
+        agent.isStopped = true;
+        anim.Play("Die");
+        goldManager.Monsterdeathgold(goldOnDeath);
+        if (Spawn.aliveMonsterCount > 0)
         {
-            agent.isStopped = true;
-            anim.Play("Die");
-            Destroy(gameObject, .5f);
-            if (Spawn.monsterCount > 0)
-            {
-                Spawn.monsterCount--;
-            }
+            Spawn.aliveMonsterCount--;
         }
     }
 }

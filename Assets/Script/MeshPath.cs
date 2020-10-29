@@ -5,11 +5,13 @@ using UnityEngine.AI;
 
 public class MeshPath : MonoBehaviour
 {
+    public float movementSpeed;
     void Start()
     {
-        GameObject castle = GameObject.Find("Castle");
+        var castle = GameObject.Find("Castle");
         if(castle)
         {
+            GetComponent<NavMeshAgent>().speed = movementSpeed;
             GetComponent<NavMeshAgent>().destination = castle.transform.position;
         }
     }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Monster
   - Castle
+  - Turret
+  - Bullet
+  - Turretcube
+  - asd
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - PostProcessing
   - TurretBox
-  - 
+  - Monster
   - 
   - 
   - 

@@ -11,7 +11,7 @@ public class CastleHealthLoss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            Spawn.monsterCount--;
+            Spawn.aliveMonsterCount--;
             CastleDamaged();
             Destroy(collision.gameObject);
         }
