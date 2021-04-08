@@ -5,18 +5,15 @@ using UnityEngine;
 public class TurretShooting : MonoBehaviour
 {
     public Transform target;
-    float speed = 15f;
 
     private void FixedUpdate()
     {
         if (target != null)
         {
-            Vector3 dir = target.position - transform.position;
-            GetComponent<Rigidbody>().velocity = dir.normalized * speed;
+            var direction = target.position - transform.position;
+            GetComponent<Rigidbody>().velocity = direction.normalized * 15f;
         }
         else
-        {
             Destroy(gameObject);
-        }
     }
 }

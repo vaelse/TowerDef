@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class Damaged : MonoBehaviour
 {
@@ -37,10 +34,9 @@ public class Damaged : MonoBehaviour
 
     public void MonsterDamaged(int damage)
     {
-        if (currentHealth <= 25)
-        {
+        if (currentHealth < 25)
             MonsterDeath();
-        }
+
         if (currentHealth >= 25)
         {
             currentHealth -= damage;
@@ -55,9 +51,8 @@ public class Damaged : MonoBehaviour
         agent.isStopped = true;
         anim.Play("Die");
         goldManager.Monsterdeathgold(goldOnDeath);
+
         if (Spawn.aliveMonsterCount > 0)
-        {
             Spawn.aliveMonsterCount--;
-        }
     }
 }

@@ -9,7 +9,7 @@ public class MeshPath : MonoBehaviour
     void Start()
     {
         var castle = GameObject.Find("Castle");
-        if(castle)
+        if (castle)
         {
             GetComponent<NavMeshAgent>().speed = movementSpeed;
             GetComponent<NavMeshAgent>().destination = castle.transform.position;

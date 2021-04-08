@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CastleHealthLoss : MonoBehaviour
 {
@@ -19,7 +17,7 @@ public class CastleHealthLoss : MonoBehaviour
 
     public void CastleDamaged()
     {
-        //remove one character form TextMesh
+        //remove one character from TextMesh
         CastleTextMesh = healthBar.GetComponent<TextMesh>();
         CastleTextMesh.text = CastleTextMesh.text.Remove(CastleTextMesh.text.Length - 1);
     }

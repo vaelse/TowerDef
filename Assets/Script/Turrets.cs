@@ -23,17 +23,14 @@ public class Turrets : MonoBehaviour
             return;
         }
         else if (Istowerbuild == false && !EventSystem.current.IsPointerOverGameObject())
-        {
             BuildTowerButton();
-        }
     }
 
     private void OnMouseOver()
     {
-        if(Istowerbuild == false)
-        {
+        if (Istowerbuild == false)
             GetComponent<Renderer>().material.color = Color.green;
-        }
+        
     }
 
     private void OnMouseExit()
@@ -44,9 +41,9 @@ public class Turrets : MonoBehaviour
     public void BuildTowerButton()
     {
         Istowerbuild = true;
-        GameObject g = Instantiate(towerPrefab);
-        g.transform.position = transform.position + new Vector3(0, 0.75f, 0);
-        g.transform.parent = gameObject.transform;
+        var tower = Instantiate(towerPrefab);
+        tower.transform.position = transform.position + new Vector3(0, 0.75f, 0);
+        tower.transform.parent = gameObject.transform;
         goldManager.Turretcost(5);
     }
 }

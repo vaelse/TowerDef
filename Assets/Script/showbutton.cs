@@ -10,12 +10,12 @@ public class showbutton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isButtonShown == false)
+        if (!isButtonShown)
         {
             destroyButton.SetActive(true);
             isButtonShown = true;
         }
-        else if (isButtonShown == true)
+        else
         {
             destroyButton.SetActive(false);
             isButtonShown = false;

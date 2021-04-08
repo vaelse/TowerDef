@@ -30,20 +30,20 @@ public class Spawn : MonoBehaviour
         }
     }
 
-public void MonsterSpawn()
+    public void MonsterSpawn()
     {
         if (waveIndex < 3)
         {
             Instantiate(Monster[0], gameObject.transform);
             aliveMonsterCount++;
         }
-        else if(waveIndex <= 5 && waveIndex >= 3)
+        else if (waveIndex <= 5 && waveIndex >= 3)
         {
             respawnDelay = 1f;
             Instantiate(Monster[1], gameObject.transform);
             aliveMonsterCount++;
         }
-        else if (waveIndex <= 7 && waveIndex >= 6 )
+        else if (waveIndex <= 7 && waveIndex >= 6)
         {
             respawnDelay = 2.5f;
             Instantiate(Monster[2], gameObject.transform);
@@ -52,22 +52,21 @@ public void MonsterSpawn()
         else if (waveIndex >= 8)
         {
             respawnDelay = 2f;
-            Instantiate(Monster[UnityEngine.Random.Range(0,Monster.Length)], gameObject.transform);
+            Instantiate(Monster[UnityEngine.Random.Range(0, Monster.Length)], gameObject.transform);
             aliveMonsterCount++;
         }
     }
-  
-   IEnumerator SpawnWave()
+
+    IEnumerator SpawnWave()
     {
-        for (int i =0; i < monstersOnWave; i++)
+        for (int i = 0; i < monstersOnWave; i++)
         {
             MonsterSpawn();
             yield return new WaitForSeconds(respawnDelay);
         }
         waveIndex++;
+
         if (monstersOnWave < 6)
-        {
             monstersOnWave++;
-        }
     }
 }
